@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--web.xml is your deployment descriptor
+        this is how tomcat gathers information about your project, such as welcome files,
+            available servlets, how to handle errors and exceptions, and other various
+            configurations you may want tomcat to know about.
+
+    It belongs in src/main/webapp/WEB-INF/ directory
+-->
+<web-app
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://java.sun.com/xml/ns/javaee"
+        xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+        version="2.5">
+    <listener>
+        <listener-class>com.servlets.DependancyLoader</listener-class>
+    </listener>
+    <servlet>
+        <servlet-name>UserServlet</servlet-name>
+        <servlet-class>com.servlets.UserServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UserServlet</servlet-name>
+        <url-pattern>/UserServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>SignUpServlet</servlet-name>
+        <servlet-class>com.servlets.SignUpServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SignUpServlet</servlet-name>
+        <url-pattern>/signUpServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>MoodServlet</servlet-name>
+        <servlet-class>com.servlets.MoodServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MoodServlet</servlet-name>
+        <url-pattern>/moodServlet</url-pattern>
+    </servlet-mapping>
+
+
+</web-app>
